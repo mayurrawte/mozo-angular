@@ -1,0 +1,51 @@
+
+.LR-section {
+  background-color: #131925;
+  min-height:600px;
+}
+.LR-logo {
+  width: 125px;
+  margin:0px auto;
+}
+.LR-logo img {
+  width: 100%;
+}
+.LR-container {
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px 50px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.LR-inputs {
+  width:100%;
+}
+.LR-btn {
+  background-color: #f17576;
+  color: #ffffff;
+}
+
+.mat-input-underline {
+  background-color: rgb(224, 224, 224);
+}
+.social-logo img {
+  width: 100%;
+}
+.social-btn {
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.social-btn-facebook {
+  background: #395997;
+
+}
+.social-btn-google {
+  background: #cf4c3c;
+}
+.social-btn p {
+  line-height: 40px;
+}

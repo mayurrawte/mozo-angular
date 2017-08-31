@@ -1,0 +1,34 @@
+<div class="container-fluid LR-section">
+  <div class="col-md-offset-1 col-md-10 col-xs-offset-1 col-xs-10 LR-container ">
+    <div class="col-md-12 col-xs-12">
+      <div class="LR-logo"><img src="../../../assets/images/MoZo1.png" ></div>
+      <hr>
+    </div>
+    <form class="col-xs-12 col-md-12 LR-form" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+      <div class="form-group">
+        <md-input-container class="LR-inputs">
+          <input mdInput placeholder="Email" formControlName="email" required type="email">
+        </md-input-container>
+      </div>
+      <div class="form-group">
+        <md-input-container class="LR-inputs">
+          <input mdInput placeholder="Password" formControlName="password" type="password" required>
+        </md-input-container>
+      </div>
+      <div class="form-group">
+        <button type="submit" md-button class="btn LR-btn LR-inputs">Login</button>
+      </div>
+    </form>
+    <div class="col-md-10 col-xs-12" style="margin:10px 0px">
+      <p style="text-align: center; color: #9a9a9a;">Sign In Using Your Social Accounts</p>
+      <div class="col-xs-10 col-md-6 social-btn social-btn-facebook" (click)="onSocialLogin('facebook')">
+        <div class="col-xs-3 social-logo"><img src="../../../assets/images/facebook-1.png"></div>
+        <p class="col-xs-8">Facebook</p>
+      </div>
+      <div class="col-xs-10 col-md-6 social-btn social-btn-google" (click)="onSocialLogin('google')">
+        <div class="col-xs-3 social-logo"><img src="../../../assets/images/google-1.png"></div>
+        <p class="col-xs-8">Google</p>
+      </div>
+    </div>
+  </div>
+</div>

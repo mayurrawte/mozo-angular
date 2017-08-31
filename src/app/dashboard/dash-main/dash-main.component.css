@@ -1,0 +1,27 @@
+.dash-cards {
+  margin:10px 0px;
+}
+.mat-card {
+  color: #44506d !important;
+}
+.dash-card-icon {
+  font-size:48px;
+  height: 100%;
+  width:100%;
+
+}
+.mat-card-header {
+  border-bottom: 1px solid #dcdcdc;
+}
+
+md-icon.size-16 {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+}
+.mat-card-footer {
+  padding: 0px 20px;
+}
+.dash-container {
+  background: #f3f3f3;
+}

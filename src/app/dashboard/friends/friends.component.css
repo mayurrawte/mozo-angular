@@ -1,0 +1,26 @@
+.btn-search {
+  margin:10px 0px;
+  background-color: #44506d;
+}
+.container-search {
+  top: 18px;
+  position: relative;
+}
+/deep/ .mat-card {
+  padding: 15px 0px 40px !important;
+}
+.card-friend-name {
+  font-size: 20px;
+  margin: 0px -15px;
+  color: #44506d;
+}
+.btn-card-friend {
+  margin: -5px 0px;
+  background: #44506d;
+  color: #FFFFFF;
+}
+.search-mode-text {
+  color: #6d6d6d;
+  text-align: center;
+  font-size: 18px;
+}

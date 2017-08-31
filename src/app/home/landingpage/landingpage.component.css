@@ -1,0 +1,29 @@
+.landing-container {
+  min-height:500px;
+  padding: 25px;
+  margin:0px;
+}
+.landing-container-1 {
+  background: url('../../../assets/images/lp1.jpg') center center no-repeat;
+  background-size: cover;
+  margin-top:70px;
+  background-attachment: fixed;
+}
+.landing-container-2 {
+  background: url('../../../assets/images/lp2.jpg') center center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+ .jumbotron {
+   color: #fff;
+   background-color: rgba(0, 0, 0, 0.18);
+   text-align: center;
+ }
+
+ .between-container {
+   padding: 100px 0px;
+   text-align: center;
+   min-height:300px;
+ }

@@ -1,0 +1,84 @@
+<div class="dash-container">
+  <div class="container-fluid dash-cards">
+    <div class="col-xs-12">
+      <md-card routerLink="/dash/balance">
+        <md-card-header>
+          <div class="col-xs-12">
+            <h4 style="text-align: left;">Balance</h4>
+          </div>
+        </md-card-header>
+        <md-card-content>
+          <div class="dash-card-icons col-xs-4">
+            <md-icon class="dash-card-icon">account_balance_wallet</md-icon>
+          </div>
+          <div>
+            <h1 style="text-align: right;">{{backendService.user.balance}}<sub><span style="font-size: 15px;">Rs.</span></sub></h1>
+          </div>
+        </md-card-content>
+      </md-card>
+    </div>
+  </div>
+
+  <div class="container-fluid dash-cards" *ngIf="expenseDataLoaded">
+    <div class="col-xs-12">
+      <md-card routerLink="/dash/expense">
+        <md-card-header>
+          <div class="col-xs-12">
+            <h4 style="text-align: left;">Expenses</h4>
+          </div>
+        </md-card-header>
+        <md-card-content>
+          <div class="dash-card-icons col-xs-4">
+            <md-icon class="dash-card-icon">attach_money</md-icon>
+          </div>
+          <div>
+            <h1 style="text-align: right;">{{totalExpenseAmount}}<sub><span style="font-size: 15px;">Rs.</span></sub></h1>
+          </div>
+        </md-card-content>
+        <md-card-footer><p style="text-align: right">till today</p></md-card-footer>
+      </md-card>
+    </div>
+  </div>
+
+
+  <div class="container-fluid dash-cards">
+    <div class="col-xs-12">
+      <md-card routerLink="/dash/transactions">
+        <md-card-header>
+          <div class="col-xs-12">
+            <h4 style="text-align: left;">Transactions</h4>
+          </div>
+        </md-card-header>
+        <md-card-content>
+          <div class="dash-card-icons col-xs-4">
+            <md-icon class="dash-card-icon">compare_arrows</md-icon>
+          </div>
+          <div>
+            <h1 style="text-align: right;">{{totalTransactionAmount}}<sub><span style="font-size: 15px;">Rs.</span></sub></h1>
+          </div>
+        </md-card-content>
+        <md-card-footer><p style="text-align: right">till today</p></md-card-footer>
+      </md-card>
+    </div>
+  </div>
+
+  <div class="container-fluid dash-cards">
+    <div class="col-xs-12">
+      <md-card routerLink="/dash/friends">
+        <md-card-header>
+          <div class="col-xs-12">
+            <h4 style="text-align: left;">Friends</h4>
+          </div>
+        </md-card-header>
+        <md-card-content>
+          <div class="dash-card-icons col-xs-4">
+            <md-icon class="dash-card-icon">face</md-icon>
+          </div>
+          <div>
+            <h1 style="text-align: right;">{{backendService.user.friends.length}}<sub><span style="font-size: 15px;">Friends</span></sub></h1>
+          </div>
+        </md-card-content>
+      </md-card>
+    </div>
+  </div>
+</div>

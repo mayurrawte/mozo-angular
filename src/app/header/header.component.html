@@ -1,0 +1,40 @@
+<nav class="navbar-custom navbar-fixed-top" *ngIf="showHeader">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="menu-btn">
+        <button md-icon-button (click)="onMenuOpen()">
+          <md-icon>menu</md-icon>
+        </button>
+      </div>
+      <div class="user-in-section" >
+        <div class="user-inner-section">
+          <div class="user-pic"><button md-icon-button [mdMenuTriggerFor]="menumen"><img [src]="backendService.user!==null && backendService.user.profile_pic !== 'null' ? backendService.user.profile_pic : '../../assets/images/user.png'"></button></div>
+        </div>
+      </div>
+      <a class="brand" routerLink="/"><div class="brand-img"><img src="../../assets/images/MoZo1.png" class="img-responsive"></div> </a>
+    </div>
+
+    <md-menu #menumen="mdMenu" md-position-mode="target-right bottom" yPosition="below" [overlapTrigger]="false">
+      <div *ngIf="!backendService.isLoggedIn; else isNotLogged">
+        <button md-menu-item routerLink="/login">
+          <md-icon>input</md-icon>
+          <span>Login</span>
+        </button>
+        <button md-menu-item routerLink="/register">
+          <md-icon>person_add</md-icon>
+          <span>Register</span>
+        </button>
+      </div>
+      <ng-template #isNotLogged>
+        <button md-menu-item routerLink="/dash">
+          <md-icon>input</md-icon>
+          <span>My account</span>
+        </button>
+        <button md-menu-item (click)="onLogout()">
+          <md-icon>keyboard_backspace</md-icon>
+          <span>Logout</span>
+        </button>
+      </ng-template>
+    </md-menu>
+  </div>
+</nav>

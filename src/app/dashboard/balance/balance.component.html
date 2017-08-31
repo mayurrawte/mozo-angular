@@ -1,0 +1,32 @@
+<div class="dash-container">
+  <div class="container-fluid dash-cards">
+    <div class="col-xs-12">
+      <md-card >
+        <md-card-header>
+          <div class="col-xs-12">
+            <h4 style="text-align: left;">Balance</h4>
+          </div>
+        </md-card-header>
+        <md-card-content>
+          <div class="dash-card-icons col-xs-4">
+            <md-icon class="dash-card-icon">account_balance_wallet</md-icon>
+          </div>
+          <div>
+            <h1 style="text-align: right;">{{backendService.user.balance}}<sub><span style="font-size: 15px;">Rs.</span></sub></h1>
+          </div>
+        </md-card-content>
+        <md-card-actions>
+          <div class="add-money-header">
+            <h4 style="text-align: left;">Money</h4>
+            <hr>
+            <div class="">
+              <md-input-container><input mdInput type="number" [(ngModel)]="newBalance" placeholder="Enter Amount"></md-input-container>
+              <button class="btn btn-add-money" (click)="onAddBalance()">Add</button>
+            </div>
+          </div>
+        </md-card-actions>
+      </md-card>
+
+    </div>
+  </div>
+</div>

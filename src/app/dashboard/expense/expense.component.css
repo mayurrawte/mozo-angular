@@ -1,0 +1,50 @@
+.expense-type-select {
+  width:100%;
+}
+.new-expense {
+  margin: 40px 20px;
+}
+.expense-type-input {
+  width:100%;
+}
+.btn-add-expense {
+  width: 100%;
+  background: #44506d;
+  color: #fff;
+}
+.select-menu {
+  margin: 20px 0px;
+}
+.expense-header {
+  display: flex;
+}
+/deep/ .mat-card-subtitle{
+      margin: 20px 5px !important;
+}
+.card-expense-amount p
+{
+  text-align: right;
+  font-size: 35px;
+  margin: -35px 15px 0px;
+  color: #44506d;
+}
+.expense-card-container /deep/ .mat-card {
+  padding: 25px 40px !important;
+  color: #44506d !important;
+}
+.expense-date {
+  position: absolute;
+  right: 53px;
+  top: 22px;
+}
+.expense-card-title {
+  font-size: 24px;
+}
+.i-dont-know-name button {
+  height: 45px;
+  text-align: right;
+}
+.i-dont-know-name {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,53 @@
+<div class="container-fluid container-expense">
+  <div class="new-expense" *ngIf="addMode">
+    <form (ngSubmit)="onAddExpense()" [formGroup]="expenseForm">
+      <div class="form-group select-menu">
+        <md-select placeholder="Expense Type" class="expense-type-select" required formControlName="type">
+          <md-option value="food">Food</md-option>
+          <md-option value="education">Education</md-option>
+          <md-option value="travel">Travel</md-option>
+          <md-option value="shopping">Shopping</md-option>
+          <md-option value="living">Living Essentials</md-option>
+          <md-option value="extra">Extra</md-option>
+        </md-select>
+      </div>
+      <div class="form-group">
+        <md-input-container class="expense-type-input">
+          <input mdInput placeholder="Item" formControlName="item">
+        </md-input-container>
+      </div>
+      <div class="form-group">
+        <md-input-container class="expense-type-input">
+          <input mdInput placeholder="Amount" type="number" formControlName="amount">
+        </md-input-container>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-add-expense" type="submit">Add Expense</button>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="!addMode  && backendService.userExpenses">
+    <div class="i-dont-know-name col-xs-4 col-xs-offset-8">
+      <button class="btn btn-add-expense" (click)="addMode=true"> New Expense</button>
+    </div>
+    <hr>
+    <div class="expense-card-container col-xs-12" *ngFor="let expense of backendService.userExpenses;">
+      <md-card>
+        <div class="expense-header">
+          <md-card-title>
+            <p class="expense-card-title">{{expense.expenseItem}}</p>
+          </md-card-title>
+          <md-card-subtitle>{{expense.type}}</md-card-subtitle>
+        </div>
+        <div class="expense-date">
+          {{expense.expenseTime |  date:'MM/dd/yyyy'}}
+        </div>
+        <md-card-content>
+          <div class="card-expense-amount"><p>{{expense.expenseAmount}}</p></div>
+        </md-card-content>
+      </md-card>
+      <hr>
+    </div>
+  </div>
+</div>

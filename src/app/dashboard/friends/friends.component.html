@@ -1,0 +1,58 @@
+<div class="container-fluid container-search">
+  <md-input-container class="col-xs-8 col-md-8">
+    <input type="search" [(ngModel)]="friendName" mdInput placeholder="Search Peoples" (keyup)="onSearch()" (blur)="onBlur()">
+  </md-input-container>
+  <button class="col-xs-4 col-md-4 btn btn-primary btn-search" type="button">
+    Search
+  </button>
+</div>
+<hr>
+<div class="container-fluid container-friends" *ngIf="searchMode">
+  <md-card *ngIf="displayHelpText">
+    <md-card-title class="search-mode-text">
+      Enter Name of Person to search
+    </md-card-title>
+  </md-card>
+
+  <div *ngIf="searchResult.length > 0">
+    <md-card *ngFor="let people of searchResult;">
+      <md-card-title>
+        <div class="col-xs-4">
+          <img src="../../../assets/images/user.png" class="img-responsive">
+        </div>
+      </md-card-title>
+      <md-card-content>
+        <div class="col-xs-6 card-friend-name">{{people.first_name}}  {{people.last_name}}</div>
+      </md-card-content>
+      <md-card-actions><button class="btn btn-card-friend" (click)="onAddFriend(people.id)">Add Friend</button></md-card-actions>
+    </md-card>
+    <hr>
+  </div>
+  <ng-template *ngIf="searchResult.length === 0 && !displayHelpText">
+    <h1>No User with that name</h1>
+  </ng-template>
+
+</div>
+
+<div *ngIf="!searchMode && friendListLoaded">
+  <div *ngIf="friendList.length === 0; else displayFriends" class="container-fluid container-friends">
+    <h2 style="text-align: center; color: #0e1d56;">No Friends</h2>
+    <p style="text-align: center">You can add friends by searching their names !</p>
+  </div>
+  <ng-template #displayFriends>
+    <div class="container-fluid container-friends"  *ngFor="let friend of friendList">
+      <md-card>
+        <md-card-title>
+          <div class="col-xs-4">
+            <img src="../../../assets/images/user.png" class="img-responsive">
+          </div>
+        </md-card-title>
+        <md-card-content>
+          <div class="col-xs-6 card-friend-name">{{friend.first_name}} {{friend.last_name}}</div>
+        </md-card-content>
+        <md-card-actions><button class="btn btn-card-friend">Friend</button></md-card-actions>
+        <hr>
+      </md-card>
+    </div>
+  </ng-template>
+</div>

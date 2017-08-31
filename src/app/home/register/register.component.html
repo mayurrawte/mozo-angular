@@ -1,0 +1,45 @@
+<div class="container-fluid LR-section">
+  <div class="col-md-offset-1 col-md-10 col-xs-offset-1 col-xs-10 LR-container ">
+    <div class="col-md-12 col-xs-12">
+      <div class="LR-logo"><img src="../../../assets/images/MoZo1.png" ></div>
+      <hr>
+    </div>
+    <div class="col-md-12 col-xs-12">
+        <div class="col-xs-10 col-xs-offset-1 col-md-6 social-btn social-btn-facebook">
+          <div class="col-xs-3 social-logo"><img src="../../../assets/images/facebook.png"></div>
+          <p class="col-xs-8">Register with Facebook</p>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-md-6 social-btn social-btn-google">
+          <div class="col-xs-3 social-logo"><img src="../../../assets/images/google.png"></div>
+          <p class="col-xs-8">Register with Google</p>
+        </div>
+
+    </div>
+      <form class="col-xs-12 col-md-12 LR-form" (ngSubmit)="onRegister()" [formGroup]="registerForm">
+        <hr>
+        <div class="form-group">
+          <md-input-container class="LR-inputs">
+            <input mdInput placeholder="First name" formControlName="first_name">
+          </md-input-container>
+        </div>
+        <div class="form-group">
+          <md-input-container class="LR-inputs">
+            <input mdInput placeholder="Last Name" formControlName="last_name">
+          </md-input-container>
+        </div>
+        <div class="form-group">
+          <md-input-container class="LR-inputs">
+            <input mdInput placeholder="Email" formControlName="email" type="email">
+          </md-input-container>
+        </div>
+        <div class="form-group">
+          <md-input-container class="LR-inputs">
+            <input mdInput placeholder="Password" formControlName="password" type="password">
+          </md-input-container>
+        </div>
+        <div class="form-group">
+          <button type="submit" md-button class="btn LR-btn LR-inputs" >Register</button>
+        </div>
+      </form>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="col-md-12">
+    <md-card>
+      <md-card-subtitle class="md-card-sub">
+        <p class="md-card-subname">Your Profile</p>
+        <md-icon class="md-card-subicon" (click)="onEdit()">mode_edit</md-icon>
+      </md-card-subtitle>
+      <hr>
+    </md-card>
+    <md-card>
+      <md-card-subtitle class="md-card-sub">
+        <p class="md-card-subname">Firstname</p>
+        <h3 class="md-card-header" *ngIf="!editMode; else firstNameEdit;">{{backendService.user.first_name}}</h3>
+        <ng-template #firstNameEdit><h3 class="md-card-header"> <md-input-container><input mdInput [(ngModel)]="backendService.user.first_name"></md-input-container> </h3></ng-template>
+      </md-card-subtitle>
+    </md-card>
+    <md-card>
+      <md-card-subtitle class="md-card-sub">
+        <p class="md-card-subname">Lastname</p>
+        <h3 class="md-card-header" *ngIf="!editMode; else lastNameEdit;">{{backendService.user.last_name}}</h3>
+        <ng-template #lastNameEdit><h3 class="md-card-header"> <md-input-container><input mdInput [(ngModel)]="backendService.user.last_name"></md-input-container> </h3></ng-template>
+      </md-card-subtitle>
+      <button *ngIf="editMode" class="btn btn-primary updateButton" (click)="onUpdate()">Update</button>
+      <hr>
+    </md-card>
+
+    <md-card>
+      <md-card-subtitle class="md-card-sub">
+        <p class="md-card-subname">Google account</p>
+        <h3 class="md-card-header" *ngIf="backendService.user.google_id !== 'null'; else googleNotConnected">Connected</h3>
+        <ng-template #googleNotConnected>
+          <h3 class="md-card-header google-connect" (click)="connectSocial('google')">Connect</h3>
+        </ng-template>
+
+      </md-card-subtitle>
+    </md-card>
+    <md-card>
+      <md-card-subtitle class="md-card-sub">
+        <p class="md-card-subname">Facebook account</p>
+        <h3 class="md-card-header" *ngIf="backendService.user.facebook_id !== 'null'; else facebookNotConnected">Connected</h3>
+        <ng-template #facebookNotConnected>
+          <h3 class="md-card-header facebook-connect" (click)="connectSocial('facebook')">Connect</h3>
+        </ng-template>
+      </md-card-subtitle>
+    </md-card>
+
+  </div>
+</div>

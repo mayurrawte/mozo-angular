@@ -1,0 +1,72 @@
+.navbar-custom {
+  background: #44506d;
+  border-color: transparent;
+  color: #fff;
+  border-bottom: 1px solid #cecece;
+  margin-bottom:0px;
+}
+.navbar-custom a {
+  color:#909090;
+}
+
+.navbar-custom .active a {
+  background-color: transparent;
+}
+.brand-img {
+  width: 75px;
+}
+.brand-img img
+{
+  width:100%;
+}
+.navbar-brand {
+  float: left;
+  height: 65px;
+  padding: 5px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+.user-in-section {
+  width: 45px;
+  float: right;
+  height: 50px;
+  margin: 10px 25px;
+  cursor: pointer;
+}
+.user-in-section .user-pic {
+  width: 100%;
+  margin: 7px 5px;
+}
+.user-in-section .user-pic img {
+  width:100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.uis-text {
+  line-height: 45px;
+  font-weight: bold;
+  color: #b7b7b7;
+}
+
+.navbar-toggle {
+  padding:15px 15px;
+}
+.user-inner-section {
+  display: flex;
+}
+.menu-btn {
+  float: left;
+  margin: 15px;
+}
+.navbar {
+  position: relative;
+}
+.brand {
+  position: absolute;
+  left: 50%;
+  margin-left: -50px !important;  /* 50% of your logo width */
+  display: block;
+  margin-top:5px;
+}
+

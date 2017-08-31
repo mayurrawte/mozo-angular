@@ -1,0 +1,54 @@
+<div class="container-fluid container-transaction">
+  <div class="new-transaction" *ngIf="addMode">
+    <form (ngSubmit)="onAddTransactions()" [formGroup]="transactionForm">
+      <div class="form-group select-menu">
+        <md-select placeholder="transactions Type" class="transactions-type-select" required formControlName="transactionType">
+          <md-option value="refund">Returnable Transaction</md-option>
+          <md-option value="nonrefund">Non Returnable Transaction</md-option>
+        </md-select>
+      </div>
+      <div class="form-group">
+        <md-input-container class="transactions-type-input">
+          <input mdInput placeholder="Amount" formControlName="transactionAmount">
+        </md-input-container>
+      </div>
+      <div class="form-group">
+        <md-select placeholder="Select Friend" formControlName="toUser" class="transactions-type-select" *ngFor="let friend of friendList" >
+          <md-option [value]="friend.email">{{friend.first_name}} {{friend.last_name}}</md-option>
+        </md-select>
+      </div>
+      <div class="form-group">
+        <md-input-container class="transactions-type-input text-area">
+          <input mdInput placeholder="Detail" formControlName="transactionDetail">
+        </md-input-container>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-add-transactions" type="submit">Add transactions</button>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="!addMode  && viewDataLoaded">
+    <div class="i-dont-know-name col-xs-4 col-xs-offset-8">
+      <button class="btn btn-add-transactions" (click)="addMode=true"> New transactions</button>
+    </div>
+    <hr>
+    <div class="transactions-card-container col-xs-12" *ngFor="let transaction of backendService.userTransactions;">
+      <md-card>
+        <div class="transactions-header">
+          <md-card-title>
+            <p class="transactions-card-title">{{transaction.transactionDetail}}</p>
+          </md-card-title>
+          <md-card-subtitle>{{transaction.transactionType}}</md-card-subtitle>
+        </div>
+        <div class="transactions-date">
+          {{searchFriendsGetName(transaction.toUser)}}
+        </div>
+        <md-card-content>
+          <div class="card-transactions-amount"><p>{{transaction.transactionAmount}}</p></div>
+        </md-card-content>
+      </md-card>
+      <hr>
+    </div>
+  </div>
+</div>

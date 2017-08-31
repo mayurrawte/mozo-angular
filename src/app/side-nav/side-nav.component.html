@@ -1,0 +1,44 @@
+<div class="side-nav-container" [ngClass]="{active: sideNavIsHidden}">
+<ol class="side-nav-list">
+  <li routerLink="/dash" (click)="onToggle()">
+    <div>
+      <md-icon>dashboard</md-icon>
+    </div>
+    <div>
+      <h4>Dashboard</h4>
+    </div>
+  </li>
+  <li routerLink="/" (click)="onToggle()">
+    <div>
+      <md-icon>home</md-icon>
+    </div>
+    <div>
+      <h4>Home</h4>
+    </div>
+  </li>
+  <li routerLink="/dash/friends" (click)="onToggle()">
+    <div>
+      <md-icon>face</md-icon>
+    </div>
+    <div>
+      <h4>Friends</h4>
+    </div>
+  </li>
+  <li routerLink="/dash/balance" (click)="onToggle()">
+    <div>
+      <md-icon>account_balance_wallet</md-icon>
+    </div>
+    <div>
+      <h4>Balance</h4>
+    </div>
+  </li>
+  <li routerLink="/dash/settings" (click)="onToggle()">
+    <div>
+      <md-icon>settings</md-icon>
+    </div>
+    <div>
+      <h4>Settings</h4>
+    </div>
+  </li>
+</ol>
+</div>
