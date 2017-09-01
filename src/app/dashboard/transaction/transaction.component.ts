@@ -47,7 +47,9 @@ export class TransactionComponent implements OnInit {
       this.transactionForm.reset();
       this.utilService.modal({'type': 'alert', 'title': 'Success', 'content': 'Transaction added'});
       this.addMode = false;
-      });
+      }).catch((data) => {
+      console.log(data);
+    });
   }
   searchFriendsGetName(email) {
     let a = null;

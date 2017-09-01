@@ -18,6 +18,7 @@ export class SettingComponent implements OnInit {
     this.editMode = !this.editMode;
   }
   onUpdate() {
+    // data = {'balance': 200 }
     const user = JSON.parse(localStorage.getItem('localUser'));
     if (this.backendService.user.first_name !== user.first_name || this.backendService.user.last_name !== user.last_name) {
       const updateData = {'first_name': this.backendService.user.first_name, 'last_name': this.backendService.user.last_name};

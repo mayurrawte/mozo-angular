@@ -1,5 +1,5 @@
 .navbar-custom {
-  background: #44506d;
+  background: white;
   border-color: transparent;
   color: #fff;
   border-bottom: 1px solid #cecece;
@@ -70,3 +70,9 @@
   margin-top:5px;
 }
 
+.menu-btn {
+  color:#556080;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}

@@ -28,7 +28,7 @@ import {TransactionComponent} from './dashboard/transaction/transaction.componen
 import { SettingComponent } from './dashboard/setting/setting.component';
 import { BalanceComponent } from './dashboard/balance/balance.component';
 import {AuthGardGuard} from './auth-gard.guard';
-import * as CryptoJS from '../../node_modules/crypto-js';
+import { ReverseListPipe } from './reverse-list.pipe';
 
 const providers = {
   'google': {
@@ -57,7 +57,8 @@ const providers = {
     DialogComponent,
     Page404Component,
     SettingComponent,
-    BalanceComponent
+    BalanceComponent,
+    ReverseListPipe
   ],
   imports: [
     BrowserModule,

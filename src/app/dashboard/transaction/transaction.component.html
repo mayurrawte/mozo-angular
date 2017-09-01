@@ -33,7 +33,7 @@
       <button class="btn btn-add-transactions" (click)="addMode=true"> New transactions</button>
     </div>
     <hr>
-    <div class="transactions-card-container col-xs-12" *ngFor="let transaction of backendService.userTransactions;">
+    <div class="transactions-card-container col-xs-12" *ngFor="let transaction of backendService.userTransactions | reverseList">
       <md-card>
         <div class="transactions-header">
           <md-card-title>

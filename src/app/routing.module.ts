@@ -35,7 +35,7 @@ const approutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(approutes)
+    RouterModule.forRoot(approutes, {useHash: true})
   ],
   exports: [
     RouterModule

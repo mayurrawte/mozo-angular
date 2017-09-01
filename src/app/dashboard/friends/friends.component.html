@@ -17,14 +17,19 @@
   <div *ngIf="searchResult.length > 0">
     <md-card *ngFor="let people of searchResult;">
       <md-card-title>
-        <div class="col-xs-4">
-          <img src="../../../assets/images/user.png" class="img-responsive">
+        <div class="col-xs-2">
+          <img [src]="people.profile_pic!== 'null' ? people.profile_pic : '../../../assets/images/user.png'" class="img-responsive friend-pic">
         </div>
       </md-card-title>
       <md-card-content>
-        <div class="col-xs-6 card-friend-name">{{people.first_name}}  {{people.last_name}}</div>
+        <div class="col-xs-offset-2 col-xs-6 card-friend-name">{{people.first_name}}  {{people.last_name}}</div>
       </md-card-content>
-      <md-card-actions><button class="btn btn-card-friend" (click)="onAddFriend(people.id)">Add Friend</button></md-card-actions>
+      <md-card-actions>
+        <button *ngIf="people.isFriend; else notFriend" class="btn btn-card-friend" (click)="onAddFriend(people.id)">Add Friend</button>
+        <ng-template #notFriend>
+          <button class="btn btn-success">Friend</button>
+        </ng-template>
+      </md-card-actions>
     </md-card>
     <hr>
   </div>
@@ -43,14 +48,14 @@
     <div class="container-fluid container-friends"  *ngFor="let friend of friendList">
       <md-card>
         <md-card-title>
-          <div class="col-xs-4">
-            <img src="../../../assets/images/user.png" class="img-responsive">
+          <div class="col-xs-2">
+            <img [src]="friend.profile_pic!== 'null' ? friend.profile_pic : '../../../assets/images/user.png'" class="img-responsive friend-pic">
           </div>
         </md-card-title>
         <md-card-content>
-          <div class="col-xs-6 card-friend-name">{{friend.first_name}} {{friend.last_name}}</div>
+          <div class="col-xs-6 col-xs-offset-2 card-friend-name">{{friend.first_name}} {{friend.last_name}}</div>
         </md-card-content>
-        <md-card-actions><button class="btn btn-card-friend">Friend</button></md-card-actions>
+        <md-card-actions><button class="btn btn-success">Friend</button></md-card-actions>
         <hr>
       </md-card>
     </div>

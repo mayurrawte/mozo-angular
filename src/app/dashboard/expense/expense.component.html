@@ -32,7 +32,7 @@
       <button class="btn btn-add-expense" (click)="addMode=true"> New Expense</button>
     </div>
     <hr>
-    <div class="expense-card-container col-xs-12" *ngFor="let expense of backendService.userExpenses;">
+    <div class="expense-card-container col-xs-12" *ngFor="let expense of backendService.userExpenses | reverseList;">
       <md-card>
         <div class="expense-header">
           <md-card-title>

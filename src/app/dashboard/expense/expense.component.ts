@@ -32,8 +32,11 @@ export class ExpenseComponent implements OnInit {
         'expenseItem': this.expenseForm.value.item,
         'expenseAmount': this.expenseForm.value.amount
       };
-      console.log(expenseData);
-      this.backendService.addExpense(expenseData);
+      this.backendService.addExpense(expenseData)
+        .then(() => {
+        this.utilService.modal({'type': 'alert', 'title': 'Added', 'content': 'Expense Added'});
+        })
+        .catch();
       this.expenseForm.reset();
       this.addMode = false;
     }

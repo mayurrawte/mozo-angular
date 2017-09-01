@@ -17,12 +17,12 @@ export class BalanceComponent implements OnInit {
   onAddBalance() {
     const totalBalance = {'balance': this.backendService.user.balance + this.newBalance};
     this.newBalance = null;
-    this.backendService.updateBalance(totalBalance).subscribe((resData: Response) => {
-      this.backendService.refreshTokenNUser(resData.json());
-      this.utilService.modal({'type': 'alert', 'title': 'Successful', 'content': 'Balance Updated'});
-    }, (error: Response) => {
-      this.utilService.modal({'type': 'alert', 'title': '', 'content': error.text()});
-    });
+    this.backendService.updateBalance(totalBalance)
+      .then(() => {
+        this.utilService.modal({'type': 'alert', 'title': 'Successful', 'content': 'Balance Updated'});
+      })
+      .catch(() => {
+        this.utilService.modal({'type': 'alert-failure', 'title': 'Low Balance', 'content': 'you are low on balance'});
+      });
   }
-
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BackendService} from '../../backend.service';
 import { Response } from '@angular/http';
+import {UtilService} from '../../util.service';
 
 @Component({
   selector: 'app-friends',
@@ -15,7 +16,7 @@ export class FriendsComponent implements OnInit {
   searchResult = [];
   friendList = null;
   friendListLoaded = false;
-  constructor(private backendService: BackendService) {
+  constructor(private backendService: BackendService, private utilService: UtilService) {
   }
 
   ngOnInit() {
@@ -37,11 +38,15 @@ export class FriendsComponent implements OnInit {
       this.displayHelpText = false;
       const fullName = this.friendName.split(' ');
       const queryData = fullName.length === 1 ? {'first_name': fullName[0]} : {'first_name': fullName[0], 'last_name': fullName[1]};
-        this.backendService.onSearchPeoples(queryData).subscribe((resData: Response) => {
-          this.searchResult = resData.json();
-        }, (error: Response) => {
-          alert(error);
-        });
+        this.backendService.onSearchPeoples(queryData)
+          .then((resData: Response) => {
+            this.searchResult = this.backendService.filterFriends(this.backendService.user.friends, resData.json());
+          });
+          // subscribe((resData: Response) => {
+        //   console.log(this.searchResult);
+        // }, (error: Response) => {
+        //   alert(error);
+        // });
     }
   }
 
@@ -54,7 +59,8 @@ export class FriendsComponent implements OnInit {
   onAddFriend(id: number) {
     this.backendService.addFriend(id)
       .then((resData) => {
-      console.log(resData);
+      this.searchMode = false;
+      this.utilService.modal({'type': 'alert', 'title': 'Friend Added', 'content': ''});
       })
       .catch((error) => {
       console.log(error);
