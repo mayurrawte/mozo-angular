@@ -1,14 +1,15 @@
 <nav class="navbar-custom navbar-fixed-top" *ngIf="showHeader">
   <div class="container-fluid">
     <div class="navbar-header">
-      <div class="">
+      <div class="menu-div">
         <button md-icon-button (click)="onMenuOpen()" class="menu-btn">
           <md-icon>menu</md-icon>
         </button>
       </div>
-      <div class="user-in-section" >
+      <div class="user-in-section">
         <div class="user-inner-section">
           <div class="user-pic"><button md-icon-button [mdMenuTriggerFor]="menumen"><img [src]="backendService.user!==null && backendService.user.profile_pic !== 'null' ? backendService.user.profile_pic : '../../assets/images/user.png'"></button></div>
+          <div class="user-name">Welcome User</div>
         </div>
       </div>
       <a class="brand" routerLink="/"><div class="brand-img"><img src="../../assets/images/MoZo1.png" class="img-responsive"></div> </a>

@@ -27,15 +27,15 @@
   line-height: 20px;
 }
 .user-in-section {
-  width: 45px;
+  min-width: 45px;
   float: right;
-  height: 50px;
+  min-height: 50px;
   margin: 10px 25px;
   cursor: pointer;
 }
 .user-in-section .user-pic {
   width: 100%;
-  margin: 7px 5px;
+  margin: 7px -15px 0px 10px;
 }
 .user-in-section .user-pic img {
   width:100%;
@@ -75,4 +75,28 @@
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+}
+.user-name {
+  display: none;
+}
+@media screen and (min-width: 758px) {
+  .menu-div {
+    display: none;
+  }
+  .navbar-header {
+    float: right;
+  }
+  .brand {
+    left: 125px;
+  }
+  .user-name {
+    color: #556080;
+    font-size: 95%;
+    margin: 10px 5px;
+    display: block;
+  }
+  .user-in-section {
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+  }
 }

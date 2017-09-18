@@ -2,6 +2,7 @@
 .LR-section {
   background-color: #131925;
   min-height:600px;
+  margin-top: -70px;
 }
 .LR-logo {
   width: 125px;
@@ -29,13 +30,14 @@
   background-color: rgb(224, 224, 224);
 }
 .social-logo img {
-  width: 100%;
+  width: 75%;
+  margin: 5px 5px;
 }
 .social-btn {
   color: #fff;
   border-radius: 5px;
   padding: 2px;
-  margin: 5px 18px;
+  margin: 5px 0px;
   cursor: pointer;
 }
 .social-btn-facebook {

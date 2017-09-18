@@ -1,6 +1,5 @@
-<div class="dash-container">
-  <div class="container-fluid dash-cards">
-    <div class="col-xs-12">
+<div class="dash-container container-fluid">
+    <div class="col-xs-12 col-md-5 col-lg-5 col-sm-5 dash-cards">
       <md-card routerLink="/dash/balance">
         <md-card-header>
           <div class="col-xs-12">
@@ -17,10 +16,8 @@
         </md-card-content>
       </md-card>
     </div>
-  </div>
 
-  <div class="container-fluid dash-cards" *ngIf="expenseDataLoaded">
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-md-5 col-lg-5 col-sm-5 dash-cards" *ngIf="expenseDataLoaded">
       <md-card routerLink="/dash/expense">
         <md-card-header>
           <div class="col-xs-12">
@@ -38,11 +35,8 @@
         <md-card-footer><p style="text-align: right">till today</p></md-card-footer>
       </md-card>
     </div>
-  </div>
 
-
-  <div class="container-fluid dash-cards">
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-md-5 col-lg-5 col-sm-5 dash-cards">
       <md-card routerLink="/dash/transactions">
         <md-card-header>
           <div class="col-xs-12">
@@ -60,10 +54,8 @@
         <md-card-footer><p style="text-align: right">till today</p></md-card-footer>
       </md-card>
     </div>
-  </div>
 
-  <div class="container-fluid dash-cards">
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-md-5 col-lg-5 col-sm-5 dash-cards">
       <md-card routerLink="/dash/friends">
         <md-card-header>
           <div class="col-xs-12">
@@ -80,5 +72,4 @@
         </md-card-content>
       </md-card>
     </div>
-  </div>
 </div>
