@@ -1,4 +1,4 @@
-<div class="container-fluid container-search">
+<div class="col-md-8 col-lg-8 col-sm-8 container-search">
   <md-input-container class="col-xs-8 col-md-8">
     <input type="search" [(ngModel)]="friendName" mdInput placeholder="Search Peoples" (keyup)="onSearch()" (blur)="onBlur()">
   </md-input-container>
@@ -45,7 +45,8 @@
     <p style="text-align: center">You can add friends by searching their names !</p>
   </div>
   <ng-template #displayFriends>
-    <div class="container-fluid container-friends"  *ngFor="let friend of friendList">
+    <div class="col-md-8 col-lg-8 col-sm-8 container-friends"  *ngFor="let friend of friendList">
+      <hr />
       <md-card>
         <md-card-title>
           <div class="col-xs-2">

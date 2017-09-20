@@ -1,12 +1,12 @@
 .navbar-custom {
-  background: white;
+  background: #44506d;
   border-color: transparent;
   color: #fff;
   border-bottom: 1px solid #cecece;
   margin-bottom:0px;
 }
 .navbar-custom a {
-  color:#909090;
+  color:#f1f1f1;
 }
 
 .navbar-custom .active a {
@@ -71,7 +71,7 @@
 }
 
 .menu-btn {
-  color:#556080;
+  color:#ffffff;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;

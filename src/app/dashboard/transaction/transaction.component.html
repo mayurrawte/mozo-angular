@@ -1,4 +1,4 @@
-<div class="container-fluid container-transaction">
+<div class="col-md-8 col-lg-8 col-sm-8 container-transaction">
   <div class="new-transaction" *ngIf="addMode">
     <form (ngSubmit)="onAddTransactions()" [formGroup]="transactionForm">
       <div class="form-group select-menu">
@@ -48,7 +48,6 @@
           <div class="card-transactions-amount"><p>{{transaction.transactionAmount}}</p></div>
         </md-card-content>
       </md-card>
-      <hr>
     </div>
   </div>
 </div>

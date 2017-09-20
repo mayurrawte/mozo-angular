@@ -1,4 +1,4 @@
-<div class="side-nav-container" [ngClass]="{active: sideNavIsHidden}">
+<div class="side-nav-container col-md-4 col-sm-4 col-lg-4" [ngClass]="{active: sideNavIsHidden}" *ngIf="!isatHome">
 <ol class="side-nav-list">
   <li routerLink="/dash" (click)="onToggle()">
     <div>

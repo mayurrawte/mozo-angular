@@ -31,6 +31,7 @@
 .transactions-card-container /deep/ .mat-card {
   padding: 25px 40px !important;
   color: #44506d !important;
+  margin: 2px 0px;
 }
 .transactions-date {
   position: absolute;
@@ -53,5 +54,5 @@
   width:100%;
 }
 .container-transaction {
-  padding: 40px 50px;
+  background-color: #f7f7f7;
 }

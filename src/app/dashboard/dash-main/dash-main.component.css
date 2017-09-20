@@ -3,6 +3,7 @@
 }
 .mat-card {
   color: #44506d !important;
+  min-height: 175px;
 }
 .dash-card-icon {
   font-size:48px;
