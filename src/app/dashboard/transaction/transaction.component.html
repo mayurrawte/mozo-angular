@@ -39,10 +39,11 @@
           <md-card-title>
             <p class="transactions-card-title">{{transaction.transactionDetail}}</p>
           </md-card-title>
-          <md-card-subtitle>{{transaction.transactionType}}</md-card-subtitle>
         </div>
+        <hr />
+        <md-card-subtitle>{{transaction.transactionType}} <br />{{searchFriendsGetName(transaction.toUser)}}</md-card-subtitle>
         <div class="transactions-date">
-          {{searchFriendsGetName(transaction.toUser)}}
+
         </div>
         <md-card-content>
           <div class="card-transactions-amount"><p>{{transaction.transactionAmount}}</p></div>

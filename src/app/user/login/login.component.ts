@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {BackendService} from "../../backend.service";
-import {FormControl, FormGroup} from "@angular/forms";
-import {UtilService} from "../../util.service";
+import {BackendService} from '../../backend.service';
+import {FormControl, FormGroup} from '@angular/forms';
+import {UtilService} from '../../util.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -11,7 +11,6 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   http: any;
-
   loginForm: FormGroup;
   result ;
   constructor(private backendService: BackendService, private utilService: UtilService, private router: Router) { }
@@ -26,10 +25,10 @@ export class LoginComponent implements OnInit {
     this.utilService.spinner();
     this.backendService.onSocialSignIn(provider)
       .then((isLoggedIn) => {
-      if (isLoggedIn) {
-        this.utilService.spinnerClose();
-        this.router.navigateByUrl('/dash');
-      }
+        if (isLoggedIn) {
+          this.utilService.spinnerClose();
+          this.router.navigateByUrl('/dash');
+        }
       });
   }
   onSubmit() {
@@ -37,12 +36,11 @@ export class LoginComponent implements OnInit {
     const data = {'username': this.loginForm.value.email, 'password': this.loginForm.value.password};
     this.backendService.loginUser(data)
       .then((isLoggedIn) => {
-      if (isLoggedIn) {
-        this.router.navigateByUrl('/dash');
-        this.utilService.spinnerClose();
-      }
+        if (isLoggedIn) {
+          this.router.navigateByUrl('/dash');
+          this.utilService.spinnerClose();
+        }
       });
   }
-
 
 }

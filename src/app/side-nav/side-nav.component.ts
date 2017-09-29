@@ -9,7 +9,7 @@ import {NavigationEnd, Router} from '@angular/router';
 })
 export class SideNavComponent implements OnInit, OnDestroy{
   sideNavIsHidden = true;
-  isatHome = false;
+  hideSideNav = false;
   constructor(private utilService: UtilService, private router: Router) { }
   ngOnInit() {
     this.utilService.sideNav.subscribe((res: boolean) => {
@@ -18,10 +18,10 @@ export class SideNavComponent implements OnInit, OnDestroy{
     this.router.events.subscribe((data) => {
       if (data instanceof NavigationEnd) {
         console.log(data.url);
-        if (data.url === '/') {
-          this.isatHome = true;
+        if (data.url === '/' || data.url === '/user/login' || data.url === '/user/register') {
+          this.hideSideNav = true;
         } else {
-          this.isatHome = false;
+          this.hideSideNav = false;
         }
       }
     });

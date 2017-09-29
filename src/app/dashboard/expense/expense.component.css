@@ -28,6 +28,9 @@
   margin: -35px 15px 0px;
   color: #44506d;
 }
+.expense-card-container {
+ margin: -20px auto;
+}
 .expense-card-container /deep/ .mat-card {
   padding: 25px 40px !important;
   color: #44506d !important;
@@ -47,4 +50,7 @@
 .i-dont-know-name {
   margin-top: 15px;
   margin-bottom: 20px;
+}
+.expense-container-main{
+  background: beige;
 }

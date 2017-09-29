@@ -71,7 +71,7 @@
 }
 
 .menu-btn {
-  color:#ffffff;
+  color:#44506d;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -99,4 +99,13 @@
     border: 1px solid #e2e2e2;
     border-radius: 10px;
   }
+}
+
+.brand-img small {
+  z-index: 8899;
+  color: #556080;
+  text-align: center;
+  position: absolute;
+  left: 25px;
+  bottom: -10px;
 }

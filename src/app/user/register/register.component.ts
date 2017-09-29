@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {BackendService} from '../../backend.service';
 import {Router} from '@angular/router';
+import {UtilService} from '../../util.service';
 
 @Component({
   selector: 'app-register',
@@ -9,9 +10,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
   registerForm: FormGroup;
-  constructor(private backendService: BackendService, private router: Router) { }
+  constructor(private backendService: BackendService, private router: Router, private utilService: UtilService) { }
 
   ngOnInit() {
     this.registerForm = new FormGroup({
@@ -37,5 +37,15 @@ export class RegisterComponent implements OnInit {
           }
         });
     }
+  }
+  onSocialSignIn(provider) {
+    this.utilService.spinner();
+    this.backendService.onSocialSignIn(provider)
+      .then((isLoggedIn) => {
+        if (isLoggedIn) {
+          this.utilService.spinnerClose();
+          this.router.navigateByUrl('/dash');
+        }
+      });
   }
 }

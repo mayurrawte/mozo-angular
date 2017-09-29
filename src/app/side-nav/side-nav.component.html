@@ -1,4 +1,4 @@
-<div class="side-nav-container col-md-4 col-sm-4 col-lg-4" [ngClass]="{active: sideNavIsHidden}" *ngIf="!isatHome">
+<div class="side-nav-container col-md-4 col-sm-4 col-lg-4" [ngClass]="{active: sideNavIsHidden}" *ngIf="!hideSideNav">
 <ol class="side-nav-list">
   <li routerLink="/dash" (click)="onToggle()">
     <div>
@@ -6,14 +6,6 @@
     </div>
     <div>
       <h4>Dashboard</h4>
-    </div>
-  </li>
-  <li routerLink="/" (click)="onToggle()">
-    <div>
-      <md-icon>home</md-icon>
-    </div>
-    <div>
-      <h4>Home</h4>
     </div>
   </li>
   <li routerLink="/dash/friends" (click)="onToggle()">

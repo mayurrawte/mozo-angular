@@ -9,19 +9,20 @@
       <div class="user-in-section">
         <div class="user-inner-section">
           <div class="user-pic"><button md-icon-button [mdMenuTriggerFor]="menumen"><img [src]="backendService.user!==null && backendService.user.profile_pic !== 'null' ? backendService.user.profile_pic : '../../assets/images/user.png'"></button></div>
-          <div class="user-name">Welcome User</div>
+          <div class="user-name" *ngIf="!backendService.isLoggedIn; else showUsername">Welcome User</div>
+          <ng-template #showUsername><div class="user-name">{{backendService.user.first_name}} {{backendService.user.last_name}}</div></ng-template>
         </div>
       </div>
-      <a class="brand" routerLink="/"><div class="brand-img"><img src="../../assets/images/MoZo1.png" class="img-responsive"></div> </a>
+      <a class="brand" routerLink="/"><div class="brand-img"><img src="../../assets/images/MoZo1.png" class="img-responsive"><small>Beta</small></div> </a>
     </div>
 
     <md-menu #menumen="mdMenu" md-position-mode="target-right bottom" yPosition="below" [overlapTrigger]="false">
       <div *ngIf="!backendService.isLoggedIn; else isNotLogged">
-        <button md-menu-item routerLink="/login">
+        <button md-menu-item routerLink="/user/login">
           <md-icon>input</md-icon>
           <span>Login</span>
         </button>
-        <button md-menu-item routerLink="/register">
+        <button md-menu-item routerLink="/user/register">
           <md-icon>person_add</md-icon>
           <span>Register</span>
         </button>

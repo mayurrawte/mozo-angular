@@ -5,8 +5,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { RegisterComponent } from './home/register/register.component';
-import { LoginComponent } from './home/login/login.component';
 import {RoutingModule} from './routing.module';
 import {
   MdMenuModule, MdButtonModule, MdIconModule, MdInputModule, MdCardModule, MdDialogModule,
@@ -29,6 +27,9 @@ import { SettingComponent } from './dashboard/setting/setting.component';
 import { BalanceComponent } from './dashboard/balance/balance.component';
 import {AuthGardGuard} from './auth-gard.guard';
 import { ReverseListPipe } from './reverse-list.pipe';
+import { UserComponent } from './user/user.component';
+import {LoginComponent} from './user/login/login.component';
+import {RegisterComponent} from './user/register/register.component';
 
 const providers = {
   'google': {
@@ -58,7 +59,8 @@ const providers = {
     Page404Component,
     SettingComponent,
     BalanceComponent,
-    ReverseListPipe
+    ReverseListPipe,
+    UserComponent
   ],
   imports: [
     BrowserModule,

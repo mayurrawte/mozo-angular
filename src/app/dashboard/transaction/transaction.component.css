@@ -4,6 +4,9 @@
 .new-transactions {
   margin: 40px 20px;
 }
+.new-transactions form {
+  padding: 50px 40px;
+}
 .transactions-type-input {
   width:100%;
 }
@@ -54,5 +57,9 @@
   width:100%;
 }
 .container-transaction {
-  background-color: #f7f7f7;
+  background-color: beige;
+}
+
+.transactions-header {
+  margin: 0px 0px -35px;
 }

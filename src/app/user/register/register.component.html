@@ -1,0 +1,45 @@
+<div class="container-fluid LR-section">
+  <div class="col-md-offset-4 col-md-4  col-xs-offset-1 col-xs-10 LR-container">
+    <div class="col-md-12 col-xs-12">
+      <div class="LR-logo"><img src="../../../assets/images/MoZo1.png" ></div>
+    </div>
+    <form class="col-xs-12 col-md-12 LR-form" (ngSubmit)="onRegister()" [formGroup]="registerForm">
+      <hr>
+      <div class="form-group">
+        <md-input-container class="LR-inputs">
+          <input mdInput placeholder="First name" formControlName="first_name">
+        </md-input-container>
+      </div>
+      <div class="form-group">
+        <md-input-container class="LR-inputs">
+          <input mdInput placeholder="Last Name" formControlName="last_name">
+        </md-input-container>
+      </div>
+      <div class="form-group">
+        <md-input-container class="LR-inputs">
+          <input mdInput placeholder="Email" formControlName="email" type="email">
+        </md-input-container>
+      </div>
+      <div class="form-group">
+        <md-input-container class="LR-inputs">
+          <input mdInput placeholder="Password" formControlName="password" type="password">
+        </md-input-container>
+      </div>
+      <div class="form-group">
+        <button type="submit" md-button class="btn LR-btn LR-inputs" >Register</button>
+      </div>
+    </form>
+    <div class="col-md-12 col-xs-12" style="margin:10px 0px">
+      <p style="text-align: center; color: #9a9a9a;">Sign In Using Your Social Accounts</p>
+      <div class="col-xs-6 col-md-6 social-btn " (click)="onSocialSignIn('google')">
+        <div class="col-xs-12 social-logo"><img src="../../../assets/images/google-s.png" class="img-responsive"></div>
+        <p class="col-xs-8">Google</p>
+      </div>
+      <div class="col-xs-6 col-md-6 social-btn" (click)="onSocialSignIn('facebook')">
+        <div class="col-xs-12 social-logo"><img src="../../../assets/images/facebook-s.png" class="img-responsive"></div>
+        <p class="col-xs-8">Facebook</p>
+      </div>
+  </div>
+</div>
+
+
