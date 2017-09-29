@@ -24,10 +24,12 @@
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
     "angular2-social-login": "^3.1.1",
+    "aos": "^2.2.0",
     "boostrap": "^1.0.0",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "crypto-js": "^3.1.9-1",
+    "jquery": "^3.2.1",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },
